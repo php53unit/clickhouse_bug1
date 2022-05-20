@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:22.4.5.9-alpine
+    container_name: clickhouse-72198374124
+
+  mysql:
+    image: mysql/mysql-server:8.0.20
+    container_name: mysql-72198374124
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
